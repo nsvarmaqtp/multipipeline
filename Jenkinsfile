@@ -15,7 +15,7 @@ node('master')
     }
     stage('ContinuousTesting')
     {
-        git 'https://github.com/selenium-saikrishna/TestingNew.git'
+        git 'https://github.com/selenium-saikrishna/FunctionalTesting.git'
         sh label: '', script: 'java -jar testing.jar'
         
     }
