@@ -11,7 +11,7 @@ node('master')
     }
     stage('ContinuousDeployment-master')
     {
-        sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.23.186:/var/lib/tomcat8/webapps/qaenv.war'
+        sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.10.167:/var/lib/tomcat8/webapps/qaenv.war'
     }
     stage('ContinuousTesting-master')
     {
@@ -22,7 +22,7 @@ node('master')
     stage('ContinuousDelivery-master')
     {
         input message: 'Waiting for Approval from Delivery Team', submitter: 'Ravi'
-        sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.20.249:/var/lib/tomcat8/webapps/prodenv.war'
+        sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.2.144:/var/lib/tomcat8/webapps/prodenv.war'
     }
     
     
